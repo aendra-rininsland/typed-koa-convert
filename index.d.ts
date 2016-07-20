@@ -1,7 +1,9 @@
 /**
  * TypeScript definition for koa-convert
  *
- * 2016 Ændrew Rininsland <@aendrew>
+ * 2016 Ændrew Rininsland (@aendrew)
+ *
+ * Thanks to Philip Bulley (@milkisevil) for some help
  */
 
 declare module "koa-convert" {
@@ -13,18 +15,8 @@ declare module "koa-convert" {
   interface ConvertStatic {
       (generator: GeneratorFunction): Compose.Middleware<any>;
 
-      compose(
-        mw: Array<GeneratorFunction> | GeneratorFunction,
-        mw2?: GeneratorFunction,
-        mw3?: GeneratorFunction,
-        mw4?: GeneratorFunction,
-        mw5?: GeneratorFunction,
-        mw6?: GeneratorFunction,
-        mw7?: GeneratorFunction,
-        mw8?: GeneratorFunction,
-        mw9?: GeneratorFunction,
-        mw10?: GeneratorFunction
-      ): Compose.Middleware<any>;
+      compose(mw: Array<GeneratorFunction>): Compose.Middleware<any>;
+      compose(...rest:Array<GeneratorFunction>): Compose.Middleware<any>;
 
       back(mw: Compose.Middleware<any>): GeneratorFunction;
   }
