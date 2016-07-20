@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "out"
+  },
+  "include": [
+    "typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "out",
+    "source"
+  ]
+}
